@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thakur Aaditya Singh - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+    <!-- Page Transition Elements -->
+    <div class="page-transition-overlay"></div>
+    <div class="transition-lines"></div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loader-container">
+        <div class="loader-text">INITIALIZING</div>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="loading-message">Loading system components...</div>
+      </div>
+    </div>
+
+    <!-- Background particles -->
+    <div id="particles-js" class="particles-container"></div>
+
+    <!-- Grid overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Mobile Menu Button -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="container">
+      <!-- Side Navigation -->
+      <nav class="side-nav">
+        <!-- Profile Section -->
+        <div class="profile">
+          <div class="profile-img-container">
+            <div class="profile-img">
+              <img src="profile.jpg" alt="Profile" />
+            </div>
+            <div class="holographic-ring"></div>
+          </div>
+          <div class="scanning-line"></div>
+          <h2>THAKUR AADITYA SINGH</h2>
+          <div class="title-container">
+            <p>MEMO</p>
+            <div class="title-decor"></div>
+          </div>
+        </div>
+
+        <!-- Status panel -->
+        <div class="status-panel">
+          <div class="status-item">
+            <div class="status-label">STATUS</div>
+            <div class="status-value active">ONLINE</div>
+          </div>
+          <div class="status-item">
+            <div class="status-label">UPTIME</div>
+            <div class="status-value" id="uptime-counter">00:00:00</div>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+          <li>
+            <a href="#home" class="active">
+              <span class="nav-indicator">
+                <span class="nav-dot"></span>
+                <span class="nav-line"></span>
+              </span>
+              <span class="nav-text">HOME</span>
+            </a>
+          </li>
+          <li>
+            <a href="#about">
+              <span class="nav-indicator">
+                <span class="nav-dot"></span>
+                <span class="nav-line"></span>
+              </span>
+              <span class="nav-text">ABOUT</span>
+            </a>
+          </li>
+          <li>
+            <a href="#skills">
+              <span class="nav-indicator">
+                <span class="nav-dot"></span>
+                <span class="nav-line"></span>
+              </span>
+              <span class="nav-text">SKILLS</span>
+            </a>
+          </li>
+          <li>
+            <a href="#projects">
+              <span class="nav-indicator">
+                <span class="nav-dot"></span>
+                <span class="nav-line"></span>
+              </span>
+              <span class="nav-text">PROJECTS</span>
+            </a>
+          </li>
+          <li>
+            <a href="#experience">
+              <span class="nav-indicator">
+                <span class="nav-dot"></span>
+                <span class="nav-line"></span>
+              </span>
+              <span class="nav-text">EXPERIENCE</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact">
+              <span class="nav-indicator">
+                <span class="nav-dot"></span>
+                <span class="nav-line"></span>
+              </span>
+              <span class="nav-text">CONTACT</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Time Module -->
+        <div class="time-module">
+          <div class="digital-clock">
+            <div id="time">00:00:00</div>
+            <div id="date">00/00/0000</div>
+          </div>
+          <div class="hourglass-container">
+            <div class="hourglass">
+              <div class="hourglass-top"></div>
+              <div class="hourglass-bottom"></div>
+              <div class="sand-stream"></div>
+              <div class="sand-pile"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a
+            href=" https://github.com/memo-py
+
+"
+            class="social-icon"
+          >
+            <div class="hexagon-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="github"
+              >
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"
+                />
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/thakur-aaditya-singh"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+          >
+            <div class="hexagon-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="linkedin"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <a href="#" class="social-icon">
+            <div class="hexagon-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="twitter"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </div>
+          </a>
+        </div>
+
+        <!-- Bottom decoration -->
+        <div class="bottom-decor">
+          <div class="circuit-line"></div>
+        </div>
+      </nav>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Holographic circles -->
+        <div class="holographic-element circle-1"></div>
+        <div class="holographic-element circle-2"></div>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+          <div class="section-background">
+            <div class="light-beam"></div>
+            <div class="light-beam beam-2"></div>
+            <canvas id="matrix-canvas"></canvas>
+          </div>
+
+          <div class="content-wrapper">
+            <!-- Section header with decorative elements -->
+            <div class="section-header">
+              <div class="header-decoration">
+                <div class="header-line"></div>
+                <div class="header-dot"></div>
+              </div>
+              <div class="section-id">01 // HOME</div>
+            </div>
+
+            <h1>WELCOME TO <span class="highlight">MY UNIVERSE</span></h1>
+            <p class="subtitle">
+              Creating digital experiences through cutting-edge programming
+            </p>
+
+            <div class="animated-text-container">
+              <div class="animated-text">
+                <span id="typing-text"></span>
+                <span class="cursor"></span>
+              </div>
+              <div class="text-progress-bar">
+                <div class="progress-line"></div>
+              </div>
+            </div>
+
+            <!-- Holographic data visualization -->
+            <div class="data-visualization">
+              <div class="data-points">
+                <div class="data-point" style="--height: 80%"></div>
+                <div class="data-point" style="--height: 30%"></div>
+                <div class="data-point" style="--height: 60%"></div>
+                <div class="data-point" style="--height: 40%"></div>
+                <div class="data-point" style="--height: 70%"></div>
+                <div class="data-point" style="--height: 20%"></div>
+                <div class="data-point" style="--height: 50%"></div>
+              </div>
+              <div class="data-grid"></div>
+            </div>
+
+            <!-- CTA Buttons with futuristic design -->
+            <div class="cta-container">
+              <a href="#projects" class="btn primary">
+                <span class="btn-text">VIEW PROJECTS</span>
+                <span class="btn-glow"></span>
+                <div class="btn-corner top-left"></div>
+                <div class="btn-corner top-right"></div>
+                <div class="btn-corner bottom-left"></div>
+                <div class="btn-corner bottom-right"></div>
+              </a>
+              <a href="#contact" class="btn secondary">
+                <span class="btn-text">CONTACT ME</span>
+                <span class="btn-glow"></span>
+                <div class="btn-corner top-left"></div>
+                <div class="btn-corner top-right"></div>
+                <div class="btn-corner bottom-left"></div>
+                <div class="btn-corner bottom-right"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive scanner element -->
+          <div class="scanner">
+            <div class="scan-line"></div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+          <div class="section-background">
+            <div class="light-beam"></div>
+            <div class="light-beam beam-2"></div>
+          </div>
+
+          <div class="content-wrapper">
+            <div class="section-header">
+              <div class="header-decoration">
+                <div class="header-line"></div>
+                <div class="header-dot"></div>
+              </div>
+              <div class="section-id">02 // ABOUT</div>
+            </div>
+
+            <h2>WHO AM <span class="highlight">I</span></h2>
+            <p class="section-intro">
+              A passionate programmer with a drive for creating innovative
+              solutions
+            </p>
+
+            <div class="about-content">
+              <div class="about-text">
+                <p>
+                  Hello! I'm Thakur Aaditya Singh, a dedicated programmer with
+                  expertise in building modern applications and websites. With a
+                  strong foundation in computer science and a passion for
+                  learning new technologies, I strive to create efficient,
+                  scalable, and user-friendly digital experiences.
+                </p>
+                <p>
+                  My journey in programming started when I was fascinated by how
+                  technology can solve real-world problems. Since then, I've
+                  been continuously expanding my skills and knowledge to stay at
+                  the forefront of technological advancements.
+                </p>
+                <p>
+                  When I'm not coding, you can find me exploring new
+                  technologies, contributing to open-source projects, or sharing
+                  my knowledge with the community.
+                </p>
+              </div>
+
+              <div class="about-stats">
+                <div class="stat-item">
+                  <div class="stat-value">1+</div>
+                  <div class="stat-label">YEARS EXPERIENCE</div>
+                  <div class="stat-bar" style="--percent: 80%"></div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">10+</div>
+                  <div class="stat-label">PROJECTS COMPLETED</div>
+                  <div class="stat-bar" style="--percent: 75%"></div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">0+</div>
+                  <div class="stat-label">TECHNOLOGIES</div>
+                  <div class="stat-bar" style="--percent: 90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scanner">
+            <div class="scan-line"></div>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+          <div class="section-background">
+            <div class="light-beam"></div>
+            <div class="light-beam beam-2"></div>
+          </div>
+
+          <div class="content-wrapper">
+            <div class="section-header">
+              <div class="header-decoration">
+                <div class="header-line"></div>
+                <div class="header-dot"></div>
+              </div>
+              <div class="section-id">03 // SKILLS</div>
+            </div>
+
+            <h2>TECHNICAL <span class="highlight">EXPERTISE</span></h2>
+            <p class="section-intro">
+              My arsenal of programming languages and technologies
+            </p>
+
+            <div class="skills-container">
+              <!-- Programming Languages -->
+              <div class="skills-category">
+                <h3>PROGRAMMING LANGUAGES</h3>
+                <div class="skill-items">
+                  <div class="skill-item">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 65%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">JS</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 70%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Web Technologies -->
+              <div class="skills-category">
+                <h3>WEB TECHNOLOGIES</h3>
+                <div class="skill-items">
+                  <div class="skill-item">
+                    <div class="skill-name">HTML/CSS</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 95%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">React</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 70%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">Node.js</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 80%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">ExpressJS</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 70%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Other Technologies -->
+              <div class="skills-category">
+                <h3>OTHER TECHNOLOGIES</h3>
+                <div class="skill-items">
+                  <div class="skill-item">
+                    <div class="skill-name">Git/GitHub</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 90%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">MongoDB</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 75%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">Mongoose</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 70%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">AWS</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 65%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Other Skills -->
+              <div class="skills-category">
+                <h3>OTHER SKILLS</h3>
+                <div class="skill-items">
+                  <div class="skill-item">
+                    <div class="skill-name">AI for Productivity</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 90%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">Logo Designing</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 85%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">Poster Designing</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 80%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">Canva</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 95%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Biotech Skills -->
+              <div class="skills-category">
+                <h3>BIOTECH SKILLS</h3>
+                <div class="skill-items">
+                  <div class="skill-item">
+                    <div class="skill-name">Plant Tissue Culture</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 20%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">Microscopy</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 70%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">DNA Extraction</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 80%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">Agarose Gel Electrophoresis</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 70%"></div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <div class="skill-name">Spectrophotometry</div>
+                    <div class="skill-level">
+                      <div class="skill-bar" style="--level: 30%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end of skills-container -->
+          </div>
+          <!-- end of content-wrapper -->
+
+          <div class="scanner">
+            <div class="scan-line"></div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+          <div class="section-background">
+            <div class="light-beam"></div>
+            <div class="light-beam beam-2"></div>
+          </div>
+
+          <div class="content-wrapper">
+            <div class="section-header">
+              <div class="header-decoration">
+                <div class="header-line"></div>
+                <div class="header-dot"></div>
+              </div>
+              <div class="section-id">04 // PROJECTS</div>
+            </div>
+
+            <h2>MY <span class="highlight">WORK</span></h2>
+            <p class="section-intro">
+              A selection of my best programming projects
+            </p>
+
+            <div class="projects-grid">
+              <!-- Project 1 -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img
+                    src="assets/Projects image/spotify.jpg"
+                    alt="Spotify Clone"
+                  />
+                </div>
+                <div class="project-info">
+                  <h3>Spotify Clone</h3>
+                  <p>
+                    A music streaming web app clone with UI animations and audio
+                    playback features.
+                  </p>
+                  <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://clone-spotifye.netlify.app"
+                      class="project-link"
+                      target="_blank"
+                    >
+                      <span>VIEW PROJECT</span>
+                    </a>
+                    <a href="#" class="project-link">
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img
+                    src="assets/Projects image/youtube.jpg"
+                    alt="YouTube Clip Downloader"
+                  />
+                </div>
+                <div class="project-info">
+                  <h3>YouTube Clip Downloader</h3>
+                  <p>
+                    A tool to download short clips from YouTube videos by
+                    specifying start and end time.
+                  </p>
+                  <div class="project-tech">
+                    <span>HTML</span>
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://youtubeclipdownloader.netlify.app"
+                      class="project-link"
+                      target="_blank"
+                    >
+                      <span>VIEW PROJECT</span>
+                    </a>
+                    <a href="#" class="project-link">
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img
+                    src="assets/Projects image/piano.jpg"
+                    alt="Piano Tunes"
+                  />
+                </div>
+                <div class="project-info">
+                  <h3>Piano Tunes</h3>
+                  <p>
+                    A digital piano app where users can play and practice tunes
+                    using keyboard input.
+                  </p>
+                  <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://pianotunesplay.netlify.app"
+                      class="project-link"
+                      target="_blank"
+                    >
+                      <span>VIEW PROJECT</span>
+                    </a>
+                    <a href="#" class="project-link">
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 4 -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img
+                    src="assets/Projects image/twitter.jpg"
+                    alt="Twitter Clone"
+                  />
+                </div>
+                <div class="project-info">
+                  <h3>Twitter Clone</h3>
+                  <p>
+                    A minimal clone of Twitter with post functionality and
+                    responsive design.
+                  </p>
+                  <div class="project-tech">
+                    <span>HTML</span>
+                    <span>Tailwind CSS</span>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://twitterclonememo.netlify.app"
+                      class="project-link"
+                      target="_blank"
+                    >
+                      <span>VIEW PROJECT</span>
+                    </a>
+                    <a href="#" class="project-link">
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extra Project 5 -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img
+                    src="assets/Projects image/aiBot.jpg"
+                    alt="AI Chatbot Assistant"
+                  />
+                </div>
+                <div class="project-info">
+                  <h3>AI Chatbot Assistant</h3>
+                  <p>
+                    A smart AI-powered chatbot that answers questions, gives
+                    suggestions, and simulates human conversation.
+                  </p>
+                  <div class="project-tech">
+                    <span>Python</span>
+                    <span>OpenAI API</span>
+                    <span>Flask</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#" class="project-link" target="_blank">
+                      <span>VIEW PROJECT</span>
+                    </a>
+                    <a href="#" class="project-link">
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extra Project 6 -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img
+                    src="assets/Projects image/portfolio.jpg"
+                    alt="Portfolio Generator"
+                  />
+                </div>
+                <div class="project-info">
+                  <h3>Portfolio Generator</h3>
+                  <p>
+                    A web tool that lets users generate beautiful,
+                    ready-to-deploy portfolio sites using templates and live
+                    preview.
+                  </p>
+                  <div class="project-tech">
+                    <span>React</span>
+                    <span>Tailwind CSS</span>
+                    <span>Vite</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#" class="project-link" target="_blank">
+                      <span>VIEW PROJECT</span>
+                    </a>
+                    <a href="#" class="project-link">
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extra Project 7 -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img
+                    src="assets/Projects image/weather.jpg"
+                    alt="WeatherCast"
+                  />
+                </div>
+                <div class="project-info">
+                  <h3>WeatherCast</h3>
+                  <p>
+                    A live weather forecast app with real-time temperature,
+                    humidity, and air quality data for any location.
+                  </p>
+                  <div class="project-tech">
+                    <span>JavaScript</span>
+                    <span>OpenWeather API</span>
+                    <span>Bootstrap</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#" class="project-link" target="_blank">
+                      <span>VIEW PROJECT</span>
+                    </a>
+                    <a href="#" class="project-link">
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extra Project 8 -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img
+                    src="assets/Projects image/expenseTracker.jpg"
+                    alt="Expense Tracker Pro"
+                  />
+                </div>
+                <div class="project-info">
+                  <h3>Expense Tracker Pro</h3>
+                  <p>
+                    A powerful financial tracking app to manage expenses,
+                    generate reports, and set monthly budgets with alerts.
+                  </p>
+                  <div class="project-tech">
+                    <span>MongoDB</span>
+                    <span>Express</span>
+                    <span>Node.js</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#" class="project-link" target="_blank">
+                      <span>VIEW PROJECT</span>
+                    </a>
+                    <a href="#" class="project-link">
+                      <span>GITHUB</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="more-projects">
+              <a href="#" class="btn primary">
+                <span class="btn-text">VIEW ALL PROJECTS</span>
+                <span class="btn-glow"></span>
+                <div class="btn-corner top-left"></div>
+                <div class="btn-corner top-right"></div>
+                <div class="btn-corner bottom-left"></div>
+                <div class="btn-corner bottom-right"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="scanner">
+            <div class="scan-line"></div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+          <div class="section-background">
+            <div class="light-beam"></div>
+            <div class="light-beam beam-2"></div>
+          </div>
+
+          <div class="content-wrapper">
+            <div class="section-header">
+              <div class="header-decoration">
+                <div class="header-line"></div>
+                <div class="header-dot"></div>
+              </div>
+              <div class="section-id">05 // EXPERIENCE</div>
+            </div>
+
+            <h2>PROFESSIONAL <span class="highlight">JOURNEY</span></h2>
+            <p class="section-intro">
+              My learning path, personal projects, and research experience
+            </p>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-content">
+                  <h3>Full Stack Web Development Learner</h3>
+                  <h4>Self-Taught (CodeWithHarry & ChatGPT)</h4>
+                  <p>
+                    Completed HTML, CSS, JavaScript and currently learning
+                    Node.js, Express.js, and MongoDB. Built projects like
+                    Spotify Clone and Twitter UI using Tailwind CSS.
+                  </p>
+                  <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>Tailwind CSS</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-content">
+                  <h3>BSc in Biotechnology (2nd Semester)</h3>
+                  <h4>IIMT University, Meerut</h4>
+                  <p>
+                    Studying key subjects like Plant Tissue Culture, Immunology,
+                    and Biochemistry. Actively participating in vivas and lab
+                    work. Favorite subject: Plant Tissue Culture.
+                  </p>
+                  <div class="tech-tags">
+                    <span>Biochemistry</span>
+                    <span>Immunology</span>
+                    <span>Plant Tissue Culture</span>
+                    <span>Entrepreneurship</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2025 - Present</div>
+                <div class="timeline-content">
+                  <h3>Biotech Research Innovator (In Progress)</h3>
+                  <h4>Independent</h4>
+                  <p>
+                    Working on novel concepts such as Bacterial Battery using
+                    microbial fuel cells and Neuromorphic DNA Computing.
+                    Preparing for future patent and research paper submission.
+                  </p>
+                  <div class="tech-tags">
+                    <span>DNA Computing</span>
+                    <span>Microbial Fuel Cell</span>
+                    <span>Innovation</span>
+                    <span>Biotech</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item education">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2021 - 2023</div>
+                <div class="timeline-content">
+                  <h3>Higher Secondary Education (PCB)</h3>
+                  <h4>Senior Secondary School</h4>
+                  <p>
+                    Completed 12th with Physics, Chemistry, and Biology.
+                    Developed interest in biotechnology and began self-learning
+                    coding alongside academic studies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scanner">
+            <div class="scan-line"></div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+          <div class="section-background">
+            <div class="light-beam"></div>
+            <div class="light-beam beam-2"></div>
+          </div>
+
+          <div class="content-wrapper">
+            <div class="section-header">
+              <div class="header-decoration">
+                <div class="header-line"></div>
+                <div class="header-dot"></div>
+              </div>
+              <div class="section-id">06 // CONTACT</div>
+            </div>
+
+            <h2>GET IN <span class="highlight">TOUCH</span></h2>
+            <p class="section-intro">Let's collaborate on your next project</p>
+
+            <div class="contact-container">
+              <div class="contact-info">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <h3>Email</h3>
+                    <p>contact@thakur02aaditya@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <h3>Location</h3>
+                    <p>Meerut, India</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <h3>Phone</h3>
+                    <p>+91 7060526872,</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-form">
+                <div class="form-group">
+                  <label for="name">NAME</label>
+                  <input type="text" id="name" name="name" class="form-input" />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">EMAIL</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">SUBJECT</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="form-input"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message">MESSAGE</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    class="form-input"
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn primary">
+                  <span class="btn-text">SEND MESSAGE</span>
+                  <span class="btn-glow"></span>
+                  <div class="btn-corner top-left"></div>
+                  <div class="btn-corner top-right"></div>
+                  <div class="btn-corner bottom-left"></div>
+                  <div class="btn-corner bottom-right"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="scanner">
+            <div class="scan-line"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
